@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_perguntas/quest%C3%A3o.dart';
+import 'package:projeto_perguntas/resposta.dart';
 
 void main() {
   runApp(PerguntaApp());
@@ -19,7 +20,6 @@ class _PerguntaAppState extends State<PerguntaApp> {
     setState(() {
       _perguntaSelecionada++;
     });
-    print(_perguntaSelecionada);
   }
 
   @override
@@ -45,9 +45,9 @@ class _PerguntaAppState extends State<PerguntaApp> {
         body: Column(
           children: [
             Questao(perguntas[_perguntaSelecionada]),
-            ElevatedButton(onPressed: _responder, child: Text('Opcao 1')),
-            ElevatedButton(onPressed: _responder, child: Text('Opcao 2')),
-            ElevatedButton(onPressed: _responder, child: Text('Opcao 3')),
+            Resposta(resposta: 'Resposta 1', onSelecao: _responder,),
+            Resposta(resposta: 'Resposta 2', onSelecao: _responder,),
+            Resposta(resposta: 'Resposta 3', onSelecao: _responder,)
           ],
         ),
       ),
